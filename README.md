@@ -2,6 +2,22 @@
 
 A complete React + TypeScript dashboard application with authentication, user management, notes, analytics, and weather widget.
 
+## 📸 Screenshots
+
+### Login Page
+![Login Page](screenshots/signin.png)
+*Clean login interface with username/password authentication*
+
+### User Detail Page
+![User Detail](screenshots/userdashboard.png)
+*User information page showing posts, todos, and complete user details*
+
+
+### Analytics Dashboard
+![Analytics](screenshots/maindashboard.png)
+*Statistics showing user data, post counts, and todo completion rates*
+
+
 ## Features
 
 ### 🔐 Authentication
@@ -58,6 +74,36 @@ A complete React + TypeScript dashboard application with authentication, user ma
 - **JSONPlaceholder API** for user/posts/todos data
 - **OpenWeatherMap API** for weather data
 
+## 📷 Taking Screenshots
+
+To add screenshots to this README:
+
+1. **Start the application:**
+   ```bash
+   npm start
+   ```
+
+2. **Create screenshots directory:**
+   ```bash
+   mkdir screenshots
+   ```
+
+3. **Take screenshots of each page:**
+   - Login page (`/login`)
+   - Dashboard (`/dashboard`)
+   - User detail page (`/users/1`)
+   - Note manager (dashboard card)
+   - Analytics (dashboard card)
+   - Weather widget (dashboard card)
+
+4. **Save screenshots as:**
+   - `screenshots/login.png`
+   - `screenshots/dashboard.png`
+   - `screenshots/user-detail.png`
+   - `screenshots/notes.png`
+   - `screenshots/analytics.png`
+   - `screenshots/weather.png`
+
 ## Setup Instructions
 
 ### Prerequisites
@@ -106,6 +152,29 @@ A complete React + TypeScript dashboard application with authentication, user ma
 - Browse all posts by the user
 - Manage todos with click-to-toggle functionality
 - Todo completion state persists throughout the app
+
+## 🏗️ App Architecture
+
+```mermaid
+graph TD
+    A[Login Page] --> B[Dashboard]
+    B --> C[User Detail Page]
+    B --> D[Note Manager]
+    B --> E[Analytics]
+    B --> F[Weather Widget]
+    
+    G[AuthContext] --> A
+    G --> B
+    G --> C
+    
+    H[NoteContext] --> D
+    I[TodoContext] --> C
+    I --> E
+    
+    J[React Query] --> B
+    J --> C
+    J --> F
+```
 
 ## Project Structure
 
